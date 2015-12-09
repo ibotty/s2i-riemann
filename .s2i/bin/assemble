@@ -14,10 +14,10 @@ if [ "$1" = "-h" ]; then
 	exec /usr/local/s2i/usage
 fi
 
-RIEMANN_CONFIG="$($STI_SCRIPTS_PATH/config_file.sh)"
-
 echo "---> Installing riemann config"
 cp -Rf /tmp/src/. ./
+
+RIEMANN_CONFIG="$($STI_SCRIPTS_PATH/config_file.sh)"
 
 echo "---> Testing riemann config"
 /opt/riemann-${RIEMANN_VERSION}/bin/riemann -t "$RIEMANN_CONFIG"
