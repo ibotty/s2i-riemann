@@ -3,7 +3,7 @@ FROM openshift/base-centos7
 
 MAINTAINER Tobias Florek <tob@butter.sh>
 
-ENV RIEMANN_VERSION 0.2.10 \
+ENV RIEMANN_VERSION 0.2.10
 ENV RIEMANN_TAR_URL https://aphyr.com/riemann/riemann-${RIEMANN_VERSION}.tar.bz2 
 
 LABEL io.k8s.description="Platform for building a Riemann monitoring server" \
@@ -14,7 +14,7 @@ LABEL io.k8s.description="Platform for building a Riemann monitoring server" \
 
 RUN yum install -y --setopt=tsflags=nodocs bzip2 java-1.8.0-openjdk-headless \
  && yum clean all -y \
- && curl -L ${RIEMANN_TAR_URL} | tar xjC /opt 
+ && curl -L "${RIEMANN_TAR_URL}" | tar xjC /opt 
 
 COPY ./.s2i/bin/ ${STI_SCRIPTS_PATH}
 
