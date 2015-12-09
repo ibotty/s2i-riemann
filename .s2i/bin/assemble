@@ -20,4 +20,4 @@ cp -Rf /tmp/src/. ./
 RIEMANN_CONFIG="$($STI_SCRIPTS_PATH/config_file.sh)"
 
 echo "---> Testing riemann config"
-/opt/riemann-${RIEMANN_VERSION}/bin/riemann -t "$RIEMANN_CONFIG"
+/opt/riemann-${RIEMANN_VERSION}/bin/riemann test "$RIEMANN_CONFIG"

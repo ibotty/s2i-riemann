@@ -9,4 +9,4 @@
 set -e
 RIEMANN_CONFIG="$($STI_SCRIPTS_PATH/config_file.sh)"
 
-exec /opt/riemann-$RIEMANN_VERSION/bin/riemann -a "$RIEMANN_CONFIG"
+exec /opt/riemann-$RIEMANN_VERSION/bin/riemann -a start "$RIEMANN_CONFIG"
